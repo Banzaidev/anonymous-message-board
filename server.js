@@ -10,9 +10,16 @@ const runner = require('./test-runner');
 const connectDB = require('./config/db.js')
 const mongoose = require('mongoose')
 const threadsSchema = require('./schemas/threads.schema.js')
+const helmet = require('helmet')
 
 const app = express();
-
+app.use(
+  helmet({
+    referrerPolicy: {
+      policy: ["same-origin"],
+    },
+  }),
+)
 app.use(async (req,res,next) => {
   if (mongoose.connection.readyState != 1){
     return res.status(503).send('Database connection error')
