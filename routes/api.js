@@ -50,6 +50,7 @@ module.exports = function (app,db) {
           text: thread.text,
           created_on: thread.created_on,
           bumped_on: thread.bumped_on,
+          replycount: thread.replycount,
           replies: sortedReplies
         }
       })
