@@ -1,36 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 * {
   margin: 0px;
   padding: 0px;
+  font-family: "Open Sans", sans-serif;
+}
+body{
+  background-color: #12121a;
+  color: white;
+}
+#navbar{
+  display: flex;
+  position: sticky;
+  top:0;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  background-color: #1e1e2f;
+  color: 	#f0f0f0;
+  border-bottom-color: #2a2a40;
+  padding: 15px;
+  
 }
 
-body {
-  padding: 10px;
-}
+ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  list-style: none;
 
+}
+ul > li a{
+
+  color: #f0f0f0;
+  text-decoration: none;
+}
+ul > li a:hover{
+  color: #24e4b7;
+}
+.clicked{
+  color: #24e4b7;
+}
 .replies {
   margin-left: 50px;
 }
+.hiddencard{
+  display: none;
+}
+.card{
+  background-color: #1f1f2e;
+  color: #f0f0f0;
+  border-color:#2e2e40;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 80%;
+  height: 75vh;
+  margin: auto;
+  
+}
+#card-title{
+  background-color: #2a2a3d;
+  padding-top:10px;
+  padding-bottom: 10px;
+  text-align: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+#card-body{
+  margin: auto;
+  width: 100%;
+  
+}
+#card-body > form{
+  display: flex;
+  flex-direction: column;
 
-.reply {
-  border: 1px dotted black;
-  margin: 5px;
-  padding: 5px;
+  padding: 20px;
+
+
 }
 
-.newReply {
-  margin: 10px 5px 10px 5px;
+#card-body > form > input[type='text']{
+  background-color: #2a2a3d;
+  color: #f0f0f0;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border-color: #3a3a55;
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
 }
+#card-body > form > textarea{
+  background-color: #2a2a3d;
+  color: #f0f0f0;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border-color: #3a3a55;
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
+  height: auto;
+  resize: none;
+}
+#card-body > form > input[type="submit"]{
+  background-color: #00c896;
+  padding: 10px;
+  font-size: large;
+  font-weight: 600;
+  color: #0f0f1a;
+  border-style: none;
+  border-radius: 10px;
+  margin-top: 20px;
 
-.thread {
-  border: 2px solid black;
-  padding: 5px;
-  margin-bottom: 5px;
 }
 
 .id {
   font-size: 10.5px;
 }
 
-#submitNewThread {
-  margin: 50px;
-}
