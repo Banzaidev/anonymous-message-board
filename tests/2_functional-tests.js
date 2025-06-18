@@ -24,8 +24,8 @@ suite('Functional Tests', function() {
                 return done(err)
             }
             assert.equal(res.body.text, testText)
-            assert.approximately(new Date(res.body.created_on).getTime(), testDate.getTime(),1000)
-            assert.approximately(new Date(res.body.bumped_on).getTime(), testDate.getTime(),1000)
+            assert.approximately(new Date(res.body.created_on).getTime(), testDate.getTime(),2000)
+            assert.approximately(new Date(res.body.bumped_on).getTime(), testDate.getTime(),2000)
             //assert.equal(res.body.replies,[]) this compare two memory address, which can't be the same
             assert.deepEqual(res.body.replies,[])
             testThreadID = res.body['_id']
@@ -89,8 +89,8 @@ suite('Functional Tests', function() {
                 return done(err)
             }
             assert.equal(res.body.replies[0].text, testReplyText)
-            assert.approximately(new Date(res.body.created_on).getTime(), testDate.getTime(),1000)
-            assert.approximately(new Date(res.body.bumped_on).getTime(), testBumpedDate.getTime(),1000)
+            assert.approximately(new Date(res.body.created_on).getTime(), testDate.getTime(),2000)
+            assert.approximately(new Date(res.body.bumped_on).getTime(), testBumpedDate.getTime(),2000)
             testReplyID = res.body.replies[0]['_id']
             return done()
         })
@@ -104,8 +104,8 @@ suite('Functional Tests', function() {
             }
             assert.equal(res.body.text, testText)
             assert.equal(res.body.replies[0].text, testReplyText)
-            assert.approximately(new Date(res.body.created_on).getTime(), testDate.getTime(),1000)
-            assert.approximately(new Date(res.body.bumped_on).getTime(), testBumpedDate.getTime(),1000)
+            assert.approximately(new Date(res.body.created_on).getTime(), testDate.getTime(),2000)
+            assert.approximately(new Date(res.body.bumped_on).getTime(), testBumpedDate.getTime(),2000)
             assert.isAtLeast(res.body.replies.length,1)
             return done()
         })

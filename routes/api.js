@@ -172,11 +172,11 @@ module.exports = function (app,db) {
     try{
       const thread = await db.findById(thread_id)
       thread.replies.forEach(reply => {
-        if (reply['_id'] == reply_id){
+        if (reply['_id'].toString() == reply_id){
           reply.reported = true
         }
       })
-      thread.save()
+      await thread.save()
       return res.send('reported')
     }
     catch(error){
@@ -192,7 +192,7 @@ module.exports = function (app,db) {
     try{
       const thread = await db.findById(thread_id)
       for(let reply of thread.replies){
-        if(reply['_id'] == reply_id){
+        if(reply['_id'].toString() == reply_id){
           const match = await bcrypt.compare(delete_password, reply.delete_password)
           if(match){
             reply.text = '[deleted]'
@@ -203,7 +203,7 @@ module.exports = function (app,db) {
           break
         }
       }
-      thread.save()
+      await thread.save()
       return res.send(result)
   
     }catch(error){
